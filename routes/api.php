@@ -16,3 +16,24 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//display all clients
+Route::get('clients','ClientController@index');
+
+//create new Client
+Route::post('client','ClientController@store');
+
+//update client info
+Route::put('client','ClientController@store');
+
+////display client individual info
+//Route::get('client/{id}','ClientController@show');
+//
+
+//login client
+Route::get('client/{username}/{password}','ClientController@show');
+
+
+//delete client individual info
+Route::delete('client/{id}','ClientController@destroy');
+
